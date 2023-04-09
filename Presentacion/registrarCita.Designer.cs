@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class Form1
+    partial class registrarCita
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,8 @@
             this.observaciones = new System.Windows.Forms.TextBox();
             this.registrar = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.devolverse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // area
@@ -40,6 +42,7 @@
             this.area.Name = "area";
             this.area.Size = new System.Drawing.Size(100, 20);
             this.area.TabIndex = 2;
+            this.area.TextChanged += new System.EventHandler(this.area_TextChanged);
             // 
             // observaciones
             // 
@@ -69,16 +72,27 @@
             this.dateTimePicker1.Value = new System.DateTime(2023, 4, 8, 18, 58, 38, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // Form1
+            // devolverse
+            // 
+            this.devolverse.Location = new System.Drawing.Point(529, 383);
+            this.devolverse.Name = "devolverse";
+            this.devolverse.Size = new System.Drawing.Size(81, 25);
+            this.devolverse.TabIndex = 6;
+            this.devolverse.Text = "devolverse";
+            this.devolverse.UseVisualStyleBackColor = true;
+            this.devolverse.Click += new System.EventHandler(this.devolverse_Click_1);
+            // 
+            // registrarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.devolverse);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.registrar);
             this.Controls.Add(this.observaciones);
             this.Controls.Add(this.area);
-            this.Name = "Form1";
+            this.Name = "registrarCita";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -91,6 +105,8 @@
         private System.Windows.Forms.TextBox observaciones;
         private System.Windows.Forms.Button registrar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button devolverse;
     }
 }
 

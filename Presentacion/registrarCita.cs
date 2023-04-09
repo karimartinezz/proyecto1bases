@@ -12,10 +12,10 @@ using Logica;
 
 namespace Presentacion
 {
-    public partial class Form1 : Form
+    public partial class registrarCita : Form
     {
         Logica.citas citas=new Logica.citas();
-        public Form1()
+        public registrarCita()
         {
             InitializeComponent();
         }
@@ -34,10 +34,33 @@ namespace Presentacion
             citas.registrarCita(observaciones.Text, area.Text, fechaSeleccionada, horaSeleccionada);
 
         }
+        private void devolverse_Click(object sender, EventArgs e)
+        {
+            DateTime fechaHoraSeleccionada = dateTimePicker1.Value;
+
+            string fechaSeleccionada = fechaHoraSeleccionada.Date.ToString("yyyy-MM-dd");
+
+            TimeSpan horaSeleccionada = fechaHoraSeleccionada.TimeOfDay;
+
+            citas.registrarCita(observaciones.Text, area.Text, fechaSeleccionada, horaSeleccionada);
+
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void area_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void devolverse_Click_1(object sender, EventArgs e)
+        {
+            Citas Citas = new Citas();
+            this.Hide();
+            Citas.Show();
         }
     }
 }
