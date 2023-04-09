@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{85873F0F-ECA4-41BA-BA00-CE133C7BAAAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{45416F85-6ED8-4DEA-98A5-0C0EDE792A34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{4EF24A6C-B6BA-4F0E-AD98-550E4E63432D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85873F0F-ECA4-41BA-BA00-CE133C7BAAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85873F0F-ECA4-41BA-BA00-CE133C7BAAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85873F0F-ECA4-41BA-BA00-CE133C7BAAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85873F0F-ECA4-41BA-BA00-CE133C7BAAAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45416F85-6ED8-4DEA-98A5-0C0EDE792A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45416F85-6ED8-4DEA-98A5-0C0EDE792A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45416F85-6ED8-4DEA-98A5-0C0EDE792A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45416F85-6ED8-4DEA-98A5-0C0EDE792A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EF24A6C-B6BA-4F0E-AD98-550E4E63432D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF24A6C-B6BA-4F0E-AD98-550E4E63432D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF24A6C-B6BA-4F0E-AD98-550E4E63432D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EF24A6C-B6BA-4F0E-AD98-550E4E63432D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {824C0577-7CA4-445F-8BA9-A86B15E83206}
+	EndGlobalSection
+EndGlobal
