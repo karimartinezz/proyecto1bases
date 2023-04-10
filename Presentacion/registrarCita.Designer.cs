@@ -34,11 +34,12 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.devolverse = new System.Windows.Forms.Button();
+            this.cedula = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // area
             // 
-            this.area.Location = new System.Drawing.Point(203, 187);
+            this.area.Location = new System.Drawing.Point(337, 178);
             this.area.Name = "area";
             this.area.Size = new System.Drawing.Size(100, 20);
             this.area.TabIndex = 2;
@@ -46,14 +47,15 @@
             // 
             // observaciones
             // 
-            this.observaciones.Location = new System.Drawing.Point(383, 187);
+            this.observaciones.Location = new System.Drawing.Point(517, 178);
             this.observaciones.Name = "observaciones";
             this.observaciones.Size = new System.Drawing.Size(100, 20);
             this.observaciones.TabIndex = 3;
+            this.observaciones.TextChanged += new System.EventHandler(this.observaciones_TextChanged);
             // 
             // registrar
             // 
-            this.registrar.Location = new System.Drawing.Point(311, 277);
+            this.registrar.Location = new System.Drawing.Point(337, 282);
             this.registrar.Name = "registrar";
             this.registrar.Size = new System.Drawing.Size(75, 23);
             this.registrar.TabIndex = 4;
@@ -65,7 +67,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MMMM-dd  |  HH:mm";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(220, 83);
+            this.dateTimePicker1.Location = new System.Drawing.Point(269, 89);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(263, 20);
             this.dateTimePicker1.TabIndex = 5;
@@ -74,7 +76,7 @@
             // 
             // devolverse
             // 
-            this.devolverse.Location = new System.Drawing.Point(529, 383);
+            this.devolverse.Location = new System.Drawing.Point(670, 391);
             this.devolverse.Name = "devolverse";
             this.devolverse.Size = new System.Drawing.Size(81, 25);
             this.devolverse.TabIndex = 6;
@@ -82,11 +84,20 @@
             this.devolverse.UseVisualStyleBackColor = true;
             this.devolverse.Click += new System.EventHandler(this.devolverse_Click_1);
             // 
+            // cedula
+            // 
+            this.cedula.Location = new System.Drawing.Point(150, 178);
+            this.cedula.Name = "cedula";
+            this.cedula.Size = new System.Drawing.Size(100, 20);
+            this.cedula.TabIndex = 7;
+            this.cedula.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // registrarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cedula);
             this.Controls.Add(this.devolverse);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.registrar);
@@ -107,6 +118,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button devolverse;
+        private System.Windows.Forms.TextBox cedula;
     }
 }
 

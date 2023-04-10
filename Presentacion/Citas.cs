@@ -25,5 +25,12 @@ namespace Presentacion
             
             
         }
+
+        private void cancelarCita_Click(object sender, EventArgs e)
+        {
+            cancelarCita cancelarCita = new cancelarCita();
+            this.Hide();
+            cancelarCita.Show();
+        }
     }
 }

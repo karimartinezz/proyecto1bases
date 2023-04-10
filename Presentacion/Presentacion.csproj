@@ -109,6 +109,12 @@
     <Compile Include="audioCita.Designer.cs">
       <DependentUpon>audioCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="cancelarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cancelarCita.Designer.cs">
+      <DependentUpon>cancelarCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Citas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="audioCita.resx">
       <DependentUpon>audioCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cancelarCita.resx">
+      <DependentUpon>cancelarCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Citas.resx">
       <DependentUpon>Citas.cs</DependentUpon>

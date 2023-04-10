@@ -29,23 +29,35 @@
         private void InitializeComponent()
         {
             this.registrarCita = new System.Windows.Forms.Button();
+            this.cancelarCita = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // registrarCita
             // 
-            this.registrarCita.Location = new System.Drawing.Point(182, 48);
+            this.registrarCita.Location = new System.Drawing.Point(152, 48);
             this.registrarCita.Name = "registrarCita";
-            this.registrarCita.Size = new System.Drawing.Size(115, 42);
+            this.registrarCita.Size = new System.Drawing.Size(147, 60);
             this.registrarCita.TabIndex = 1;
             this.registrarCita.Text = "registrar cita";
             this.registrarCita.UseVisualStyleBackColor = true;
             this.registrarCita.Click += new System.EventHandler(this.registrarCita_Click);
+            // 
+            // cancelarCita
+            // 
+            this.cancelarCita.Location = new System.Drawing.Point(397, 48);
+            this.cancelarCita.Name = "cancelarCita";
+            this.cancelarCita.Size = new System.Drawing.Size(161, 48);
+            this.cancelarCita.TabIndex = 2;
+            this.cancelarCita.Text = "cancelar cita";
+            this.cancelarCita.UseVisualStyleBackColor = true;
+            this.cancelarCita.Click += new System.EventHandler(this.cancelarCita_Click);
             // 
             // Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cancelarCita);
             this.Controls.Add(this.registrarCita);
             this.Name = "Citas";
             this.Text = "Citas";
@@ -55,5 +67,6 @@
 
         #endregion
         private System.Windows.Forms.Button registrarCita;
+        private System.Windows.Forms.Button cancelarCita;
     }
 }
