@@ -42,7 +42,8 @@ namespace Presentacion
                 int number;
                 if (int.TryParse(cedula.Text, out number))
                 {
-                    citas.registrarCita(observaciones.Text, area.Text, fechaSeleccionada, horaSeleccionada, Int32.Parse(cedula.Text));
+                    citas.registrarCitaPaciente(observaciones.Text, area.Text, fechaSeleccionada, horaSeleccionada, Int32.Parse(cedula.Text));
+                    
                 }
                 else
                 {
@@ -67,7 +68,7 @@ namespace Presentacion
 
         private void devolverse_Click_1(object sender, EventArgs e)
         {
-            Citas Citas = new Citas();
+            pacienteCitas Citas = new pacienteCitas();
             this.Hide();
             Citas.Show();
         }
@@ -78,6 +79,11 @@ namespace Presentacion
         }
 
         private void observaciones_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cedulaRegistrador_TextChanged_1(object sender, EventArgs e)
         {
 
         }

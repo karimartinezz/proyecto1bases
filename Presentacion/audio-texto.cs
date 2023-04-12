@@ -28,6 +28,7 @@ namespace Presentacion
             registrarCita registrarCita = new registrarCita();
             this.Hide();
             registrarCita.Show();
+
         }
 
         private void btnAudio_Click(object sender, EventArgs e)

@@ -109,17 +109,41 @@
     <Compile Include="audioCita.Designer.cs">
       <DependentUpon>audioCita.cs</DependentUpon>
     </Compile>
-    <Compile Include="cancelarCita.cs">
+    <Compile Include="cancelarCitaF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cancelarCita.Designer.cs">
-      <DependentUpon>cancelarCita.cs</DependentUpon>
+    <Compile Include="cancelarCitaF.Designer.cs">
+      <DependentUpon>cancelarCitaF.cs</DependentUpon>
     </Compile>
-    <Compile Include="Citas.cs">
+    <Compile Include="cancelarCitaP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Citas.Designer.cs">
-      <DependentUpon>Citas.cs</DependentUpon>
+    <Compile Include="cancelarCitaP.Designer.cs">
+      <DependentUpon>cancelarCitaP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pacienteCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pacienteCitas.Designer.cs">
+      <DependentUpon>pacienteCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="funcionarioCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="funcionarioCitas.Designer.cs">
+      <DependentUpon>funcionarioCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paciente_funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paciente_funcionario.Designer.cs">
+      <DependentUpon>paciente_funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reasignacionCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reasignacionCita.Designer.cs">
+      <DependentUpon>reasignacionCita.cs</DependentUpon>
     </Compile>
     <Compile Include="registrarCita.cs">
       <SubType>Form</SubType>
@@ -135,11 +159,23 @@
     <EmbeddedResource Include="audioCita.resx">
       <DependentUpon>audioCita.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cancelarCita.resx">
-      <DependentUpon>cancelarCita.cs</DependentUpon>
+    <EmbeddedResource Include="cancelarCitaF.resx">
+      <DependentUpon>cancelarCitaF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Citas.resx">
-      <DependentUpon>Citas.cs</DependentUpon>
+    <EmbeddedResource Include="cancelarCitaP.resx">
+      <DependentUpon>cancelarCitaP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="funcionarioCitas.resx">
+      <DependentUpon>funcionarioCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pacienteCitas.resx">
+      <DependentUpon>pacienteCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paciente_funcionario.resx">
+      <DependentUpon>paciente_funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reasignacionCita.resx">
+      <DependentUpon>reasignacionCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="registrarCita.resx">
       <DependentUpon>registrarCita.cs</DependentUpon>
