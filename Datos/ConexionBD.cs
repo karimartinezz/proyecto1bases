@@ -173,13 +173,10 @@ namespace Datos
                 // Ejecutar la consulta y guardar los resultados en un DataTable
                 DataTable resultadoCita = ejecutarConsulta(consultaCita);
 
-                Console.WriteLine("textp: " + consultaCita);
 
                 // Verificar si se encontró una coincidencia y si cumple la condición de fecha mínima
                 if (resultadoCita.Rows.Count > 0 )
                 {
-                    Console.WriteLine("min: " + fechaCitaMinima);
-                    Console.WriteLine("date: " + DateTime.ParseExact(fecha, "yyyy-MM-dd", CultureInfo.InvariantCulture));
 
                     if (fechaActual >= fechaCitaMinima)
                     {
@@ -194,13 +191,38 @@ namespace Datos
                     
                     break;
                 }
-               
 
             }
             return idCitaEncontrada;
-
         }
-        public void cancelarCitaDAO(int id, string nuevoEstado)
+        public int validarCancelacionCentro(int idCita)
+        {
+            string cadena = "SELECT Estado FROM Cita WHERE [ID] = @IdCita";
+            openConnection();
+            int resultado = 0;
+            try
+            {
+                SqlCommand comando = new SqlCommand(cadena, sqlConnection);
+                comando.Parameters.AddWithValue("@IdCita", idCita);
+                SqlDataReader reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    string estado = reader.GetString(0);
+                    resultado = estado.Equals("Cancelada por centro medico") ? 1 : 0;
+                }
+
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connection problem" + ex.Message);
+            }
+
+            closeConnection();
+            return resultado;
+        }
+        public void modificarEstadoCita(int id, string nuevoEstado)
         {
             string cadena = "UPDATE Cita SET estado = @nuevoEstado WHERE id = @id";
             openConnection();
@@ -219,5 +241,64 @@ namespace Datos
 
             closeConnection();
         }
+        
+        public void bitacoraPaciente(int id, int cedula, string nuevoEstado, string fecha, TimeSpan hora)
+        {
+            string cadena = "INSERT INTO Bitacora VALUES (" + id + ",'" + fecha + "', '" + hora + "', '" + cedula + "',NULL,'" + nuevoEstado + "')";
+            openConnection();
+            try
+            {
+                SqlCommand comando = new SqlCommand(cadena, sqlConnection);
+                comando.ExecuteNonQuery();
+               
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connection problem" + ex.Message);
+            }
+
+            closeConnection();
+        }
+        public void bitacoraFuncionario(int id, int cedula, string nuevoEstado, string fecha, TimeSpan hora)
+        {
+            string cadena = "INSERT INTO Bitacora VALUES (" + id + ",'" + fecha + "', '" + hora + "', NULL,'" + cedula + "','" + nuevoEstado + "')";
+            openConnection();
+            try
+            {
+                SqlCommand comando = new SqlCommand(cadena, sqlConnection);
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connection problem" + ex.Message);
+            }
+
+            closeConnection();
+        }
+        public int validarExistenciaFuncionario(int cedula)
+        {
+            string cadena = "SELECT COUNT(*) FROM Funcionario WHERE cedula = @cedula";
+            int contador = 0;
+            openConnection();
+            try
+            {
+                SqlCommand comando = new SqlCommand(cadena, sqlConnection);
+                comando.Parameters.AddWithValue("@cedula", cedula);
+
+                int count = (int)comando.ExecuteScalar();
+
+                contador = count;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connection problem" + ex.Message);
+            }
+
+            closeConnection();
+            return contador;
+        }
+
     }
 }
