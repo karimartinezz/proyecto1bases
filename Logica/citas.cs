@@ -11,37 +11,72 @@ namespace Logica
     {
         Datos.ConexionBD conexion = new Datos.ConexionBD();
 
-       
-        public void registrarCita(string observaciones, string area, string fechaSeleccionada, TimeSpan horaSeleccionada, int cedula)
-        {
-           
-            string estado = "Registrada";
-            int id = conexion.generarID("Cita" , "ID");
-            conexion.registrarCitaDAO(id, observaciones, area, horaSeleccionada, fechaSeleccionada,  estado, cedula);
 
+        public void registrarCitaPaciente(string observaciones, string area, string fechaSeleccionada, TimeSpan horaSeleccionada, int cedula)
+        {
+
+            string estado = "Registrada";
+            int id = conexion.generarID("Cita", "ID");
+
+            TimeSpan horaActual = DateTime.Now.TimeOfDay;
+            DateTime fecha = DateTime.Today;
+            string fechaActual = fecha.Date.ToString("yyyy-MM-dd");
+            conexion.registrarCitaDAO(id, observaciones, area, horaSeleccionada, fechaSeleccionada, estado, cedula);
+            conexion.bitacoraPaciente(id, cedula, estado, fechaActual, horaActual); ;
         }
         public int revisarPaciente(int cedula)
         {
-            int validar=conexion.validarExistenciaPaciente(cedula);
+            int validar = conexion.validarExistenciaPaciente(cedula);
             return validar;
 
         }
-        public int revisarCita(int cedula, string fechaSeleccionada, TimeSpan horaSeleccionada) {
-            int validar=conexion.validarPacienteCita( cedula,  fechaSeleccionada,  horaSeleccionada);
+        public int revisarCita(int cedula, string fechaSeleccionada, TimeSpan horaSeleccionada)
+        {
+            int validar = conexion.validarPacienteCita(cedula, fechaSeleccionada, horaSeleccionada);
             return validar;
         }
-        public void cancelarCita(int ID)
+        public void cancelarCita(int ID, int cedula)
         {
             string estado = "Cancelada por paciente";
-            conexion.cancelarCitaDAO(ID, estado);
+            conexion.modificarEstadoCita(ID, estado);
+            TimeSpan horaActual = DateTime.Now.TimeOfDay;
+            DateTime fecha = DateTime.Today;
+            string fechaActual = fecha.Date.ToString("yyyy-MM-dd");
+            conexion.bitacoraPaciente(ID, cedula, estado, fechaActual, horaActual);
 
         }
-        public void cancelarCitaCentro(int ID)
+        public void cancelarCitaCentro(int ID, int cedula)
         {
             string estado = "Cancelada por centro medico";
-            conexion.cancelarCitaDAO(ID, estado);
+            conexion.modificarEstadoCita(ID, estado);
+            TimeSpan horaActual = DateTime.Now.TimeOfDay;
+            DateTime fecha = DateTime.Today;
+            string fechaActual = fecha.Date.ToString("yyyy-MM-dd");
+            conexion.bitacoraFuncionario(ID, cedula, estado, fechaActual, horaActual);
 
         }
+        public int revisarFuncionario(int cedula)
+        {
+            int validar = conexion.validarExistenciaFuncionario(cedula);
+            return validar;
 
+        }
+        public int revisarEstado(int id)
+        {
+            int validar = conexion.validarCancelacionCentro(id);
+            return validar;
+        }
+        public void asignarCita(int ID, int cedula)
+        {
+            string estado = "Asignada";
+            conexion.modificarEstadoCita(ID, estado);
+            TimeSpan horaActual = DateTime.Now.TimeOfDay;
+            DateTime fecha = DateTime.Today;
+            string fechaActual = fecha.Date.ToString("yyyy-MM-dd");
+            conexion.bitacoraFuncionario(ID, cedula, estado, fechaActual, horaActual);
+
+
+
+        }
     }
 }
