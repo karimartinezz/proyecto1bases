@@ -75,8 +75,22 @@ namespace Logica
             string fechaActual = fecha.Date.ToString("yyyy-MM-dd");
             conexion.bitacoraFuncionario(ID, cedula, estado, fechaActual, horaActual);
 
-
+        }
+        public void atenderCita(int ID, int cedula)
+        {
+            string estado = "Realizada";
+            conexion.modificarEstadoCita(ID, estado);
+            TimeSpan horaActual = DateTime.Now.TimeOfDay;
+            DateTime fecha = DateTime.Today;
+            string fechaActual = fecha.Date.ToString("yyyy-MM-dd");
+            conexion.bitacoraFuncionario(ID, cedula, estado, fechaActual, horaActual);
 
         }
+        public int revisarEstadoAtender(int id)
+        {
+            int validar= conexion.validarEstadoAtender(id);
+            return validar;
+        }
+
     }
 }
