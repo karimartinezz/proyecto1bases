@@ -299,6 +299,33 @@ namespace Datos
             closeConnection();
             return contador;
         }
+        public int validarEstadoAtender(int idCita)
+        {
+            string cadena = "SELECT Estado FROM Cita WHERE [ID] = @IdCita";
+            openConnection();
+            int resultado = 0;
+            try
+            {
+                SqlCommand comando = new SqlCommand(cadena, sqlConnection);
+                comando.Parameters.AddWithValue("@IdCita", idCita);
+                SqlDataReader reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    string estado = reader.GetString(0);
+                    resultado = (estado.Equals("Registrada") || estado.Equals("Asignada")) ? 1 : 0;
+                }
+
+                reader.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connection problem" + ex.Message);
+            }
+
+            closeConnection();
+            return resultado;
+        }
 
     }
 }
