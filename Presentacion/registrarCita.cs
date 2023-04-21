@@ -26,11 +26,20 @@ namespace Presentacion
         }
         private void registrar_Click(object sender, EventArgs e)
         {
-            int validar = citas.revisarPaciente(Int32.Parse(cedula.Text));
+            int number2, validar=-5;
+            if (int.TryParse(cedula.Text, out number2))
+            {
+                 validar = citas.revisarPaciente(Int32.Parse(cedula.Text));
 
+            }
+            else
+            {
+                MessageBox.Show("La cedula debe ser solo numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+ 
             if (validar == 0)
             {
-                MessageBox.Show("El nombre del paciente no está registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La cedula del paciente no está registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -45,10 +54,7 @@ namespace Presentacion
                     citas.registrarCitaPaciente(observaciones.Text, area.Text, fechaSeleccionada, horaSeleccionada, Int32.Parse(cedula.Text));
                     
                 }
-                else
-                {
-                    MessageBox.Show("La cedula debe ser solo numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+               
                 
             }
 

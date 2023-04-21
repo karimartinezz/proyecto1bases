@@ -30,5 +30,7 @@ namespace Presentacion
             this.Hide();
             cancelarCitaF.Show();
         }
+
+       
     }
 }

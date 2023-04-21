@@ -32,5 +32,12 @@ namespace Presentacion
             this.Hide();
             cancelarCita.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

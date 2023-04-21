@@ -52,14 +52,14 @@
             this.cancelarCita.UseVisualStyleBackColor = true;
             this.cancelarCita.Click += new System.EventHandler(this.cancelarCita_Click);
             // 
-            // Citas
+            // pacienteCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cancelarCita);
             this.Controls.Add(this.registrarCita);
-            this.Name = "Citas";
+            this.Name = "pacienteCitas";
             this.Text = "Citas";
             this.ResumeLayout(false);
 
